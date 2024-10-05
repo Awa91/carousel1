@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer components {
+    .card {
+      background-color: theme('colors.white');
+      border-radius: theme('borderRadius.lg');
+      padding: theme('spacing.6');
+      box-shadow: theme('boxShadow.xl');
+    }
+    /* ... */
+@keyframes carouselAnim {
+
+    from {
+        transform: translate(0, 0);
+      }
+      to {
+        transform: translate(calc(-100% + (6*300px)));
+      }
+    
+}
+    .carousel-focus:hover {
+        transition: all 0.8s;
+        transform: scale(1.1);
+      }
+      
+@media only screen and (max-width: 2536px){
+    .container .carousel-items{
+        animation:  carouselAnim 6s infinite alternate linear;
+    }
+    @keyframes carouselAnim {
+        from {
+            transform: translate(0, 0);
+          }
+          to {
+            transform: translate(calc(-100% + (5*300px)));
+          }
+        }
+        
+    }
+}
+
+  
